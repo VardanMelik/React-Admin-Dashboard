@@ -1,10 +1,22 @@
-import React from 'react'
+import React from 'react';
+
+import Sidebar from '../sidebar/Sidebar';
+import Router from '../Router';
+
+import {
+    BrowserRouter,
+    Route
+} from 'react-router-dom';
 
 function Layout() {
     return (
-        <div>
-            Hello Layout
-        </div>
+        <BrowserRouter>
+            <Route render={(props) => {
+                <div className="layout">
+                    <Sidebar {...props} />
+                </div>    
+            }}/>
+        </BrowserRouter>
     )
 }
 
