@@ -46,6 +46,7 @@
 }
 
 .dropdown__content.active {
+    top: 50px;
     transform: scale(1);
     transition: transform 0.5s var(transition-cubic);
 }

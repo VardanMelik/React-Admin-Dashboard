@@ -8,6 +8,9 @@ const clickOutsideRef = (content_ref, toggle_ref) => {
             content_ref.current.classList.toggle('active')
         } else {
             // user click outside toggle and content
+            if (content_ref.current && content_ref.current.contains(e.target)) {
+                content_ref.current.classList.remove('active');
+            }
             
         }
     })
@@ -16,6 +19,8 @@ const clickOutsideRef = (content_ref, toggle_ref) => {
 const Dropdown = props => {
     const dropdown__toggle_el = useRef(null);
     const dropdown__content_el = useRef(null);
+
+    clickOutsideRef(dropdown__content_el, dropdown__toggle_el);
 
     return (
         <div className="dropdown">
